@@ -1,0 +1,165 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login and Signup Page</title>
+  <!-- <link rel="stylesheet" href="login.css"> -->
+</head>
+
+<style>
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    margin: 10px;
+  }
+   .form-container2{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    margin: 10px;
+    margin-left: 2rem;
+    transform: scaleX(0);
+    transform-origin: right;
+    
+   }
+   .form-container2.active{
+    transform: scaleX(1);
+    transition: 0.2s ease-in-out;
+   }
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .buttons{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+  }
+  a{
+     text-decoration: none;
+    color: white;
+    font-weight: 500;
+     
+  }
+  a:hover{
+    color: #000;
+    
+  }
+  
+  
+  button:hover {
+    background-color: #44ff4d;
+    color: #000;
+  }
+  .btn{
+    width: 40%;
+    padding: 0.5rem 2rem;
+    color: #45a049;
+    background: #000;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+  }
+  
+
+</style>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <form id="login-form">
+        <h2>Login</h2>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter email" required>
+       
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" required>
+        <div class="buttons">
+            <button type="submit" class="btn"   onClick="auth()" ><a href="project.html">login</a> </button>
+            <button class="btn" id="sign">signUp</button>
+        </div>
+        
+      </form>
+    
+    </div>
+    
+    <div class="form-container2">
+      <form id="signup-form">
+        <h2>Signup</h2>
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter full name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter email" required>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter username" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" required>
+        <button type="submit" class="btn" >Signup</button>
+      </form>
+    </div>
+  </div>
+ 
+  <script>
+    let signUp=document.querySelector('.form-container2');
+document.querySelector('#sign').onclick = () =>{
+    signUp.classList.toggle('active');
+} 
+  function auth(){
+    let email=document.getElementById("email").value;
+    let password=document.getElementById("password").value;
+    if(email=="admin@gmail.com" && password=="user123"){
+       
+                window.location.reload('project.html');
+                alert("login successfully");
+                 
+    }
+    else{
+        alert("invalid information");
+        return;
+    }
+
+  }
+
+  
+ 
+  </script>
+</body>
+</html>
+ 
